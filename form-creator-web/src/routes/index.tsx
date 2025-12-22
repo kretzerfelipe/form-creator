@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -5,5 +6,11 @@ export const Route = createFileRoute('/')({
 })
 
 function RouteComponent() {
-  return <div></div>
+  return (
+    <div className='flex-container p-4'>
+      <div className='flex-container justify-end'>
+        <Button>Iniciar novo formulário</Button>
+      </div>
+    </div>
+  )
 }
