@@ -1,16 +1,18 @@
 import { Button } from '@/components/ui/button'
 import { createFileRoute } from '@tanstack/react-router'
+import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const { t } = useTranslation()
+
   return (
-    <div className='flex-container p-4'>
-      <div className='flex-container justify-end'>
-        <Button>Iniciar novo formulário</Button>
-      </div>
+    <div className='flex-container justify-between'>
+      <h1>{t('myForms', { ns: 'home' })}</h1>
+      <Button>{t('startNewForm', { ns: 'home' })}</Button>
     </div>
   )
 }

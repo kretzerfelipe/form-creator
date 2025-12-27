@@ -13,15 +13,17 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <div className='flex-container'>
+    <div className='flex-container justify-center'>
       <div className='flex-container bg-card items-center justify-center gap-4 p-4'>
         <div className='flex-container fill'></div>
-        <InputGroup className='flex-container w-200 max-w-3/4'>
-          <InputGroupInput placeholder='Search...' />
-          <InputGroupAddon>
-            <SearchIcon />
-          </InputGroupAddon>
-        </InputGroup>
+        <div className='flex-container max-w-250 px-4'>
+          <InputGroup className='flex-container'>
+            <InputGroupInput placeholder='Search...' />
+            <InputGroupAddon>
+              <SearchIcon />
+            </InputGroupAddon>
+          </InputGroup>
+        </div>
         <div className='flex-container fill justify-end'>
           <Avatar>
             <AvatarImage src='https://github.com/shadcn.png' />
@@ -29,7 +31,11 @@ function RootComponent() {
           </Avatar>
         </div>
       </div>
-      <Outlet />
+      <div className='flex-container justify-center'>
+        <div className='flex-container max-w-250 p-4'>
+          <Outlet />
+        </div>
+      </div>
     </div>
   )
 }
